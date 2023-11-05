@@ -1,0 +1,20 @@
+package contentManagementSystem.model.response;
+
+public class CreateSchemaResponse extends BaseResponse{
+    String schemaId;
+
+    public CreateSchemaResponse(String schemaId) {
+        this.schemaId = schemaId;
+    }
+
+    public CreateSchemaResponse() {
+    }
+
+    public String getSchemaId() {
+        return schemaId;
+    }
+
+    public void setSchemaId(String schemaId) {
+        this.schemaId = schemaId;
+    }
+}
