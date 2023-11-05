@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
 @RestController
-public class GetFaqSchemaController {
+public class GetSchemaController {
     @Autowired
     GetSchemaService getSchemaService;
 
     @GetMapping(value = "/getSchema/{schemaId}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<GetAllSchemaResponse> getAllSchemaResponse(@RequestParam String selectedSchema, @PathVariable String schemaId, @RequestHeader Map<String, String> headers) {
+    public ResponseEntity<GetSchemaResponse> getSchema(@RequestParam String selectedSchema, @PathVariable String schemaId, @RequestHeader Map<String, String> headers) {
 
         ResponseEntity responseEntity = null;
 

@@ -4,10 +4,12 @@ import contentManagementSystem.dal.HelpXCustomRepositoryImpl;
 import contentManagementSystem.model.HelpX;
 import contentManagementSystem.model.request.BaseRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 
 import java.util.List;
 
+@Component
 public class HelpXCrudSchemaFactory implements CrudSchemaInterface<HelpX> {
 
     @Autowired
