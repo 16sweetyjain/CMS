@@ -1,7 +1,9 @@
 package contentManagementSystem.service.selectSchema;
 
 import contentManagementSystem.schemaEnum.SchemaEnum;
+import org.springframework.stereotype.Component;
 
+@Component
 public class SchemaFactory {
 
     public CrudSchemaInterface createSchemaFactory(String selectedSchema) {
