@@ -1,11 +1,9 @@
 package contentManagementSystem.model.request;
 
 public class BaseRequest {
-    String selectedSchema;
     String requestId;
 
     public BaseRequest(String selectedSchema, String requestId) {
-        this.selectedSchema = selectedSchema;
         this.requestId = requestId;
     }
 
@@ -17,11 +15,11 @@ public class BaseRequest {
         this.requestId = requestId;
     }
 
-    public String getSelectedSchema() {
-        return selectedSchema;
-    }
 
-    public void setSelectedSchema(String selectedSchema) {
-        this.selectedSchema = selectedSchema;
+    @Override
+    public String toString() {
+        return "BaseRequest{" +
+                ", requestId='" + requestId + '\'' +
+                '}';
     }
 }

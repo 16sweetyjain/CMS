@@ -4,7 +4,7 @@ import contentManagementSystem.schemaEnum.SchemaEnum;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SchemaFactory {
+public class GetSchemaFactory {
 
     public CrudSchemaInterface createSchemaFactory(String selectedSchema) {
         switch(selectedSchema) {

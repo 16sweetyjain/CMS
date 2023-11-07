@@ -25,4 +25,13 @@ public class CreateFaqSchemaRequest extends BaseRequest {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    @Override
+    public String toString() {
+        return "CreateFaqSchemaRequest{" +
+                ", requestId='" + requestId + '\'' +
+                ", description='" + description + '\'' +
+                ", title='" + title + '\'' +
+                "} " + super.toString();
+    }
 }

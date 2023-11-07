@@ -3,6 +3,9 @@ package contentManagementSystem.model.response;
 public class UpdateSchemaResponse<K> extends BaseResponse{
     K schema;
 
+    public UpdateSchemaResponse() {
+    }
+
     public K getSchema() {
         return schema;
     }

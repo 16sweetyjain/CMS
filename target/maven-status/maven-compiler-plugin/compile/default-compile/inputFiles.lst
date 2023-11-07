@@ -35,4 +35,5 @@
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/model/request/GetAllSchemaRequest.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/service/selectSchema/FaqCrudSchemaFactory.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/model/response/UpdateSchemaResponse.java
+/Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/config/MongoConfig.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/model/request/CreateFaqSchemaRequest.java

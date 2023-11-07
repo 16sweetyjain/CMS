@@ -2,13 +2,14 @@ package contentManagementSystem.service.selectSchema;
 
 
 import contentManagementSystem.model.request.BaseRequest;
+import contentManagementSystem.service.SchemaTemplate;
 
 import java.util.List;
-
-public interface CrudSchemaInterface<K> {
-    public K getSchema(String schemaId);
-    public K createSchema(K k);
-    public List<K> getAllSchema();
-    public K updateSchema(K k);
-    public K createSchemaFromRequest(BaseRequest baseRequest);
+// K - generic request object
+// T - generic response object
+public interface CrudSchemaInterface<K, T> {
+    public T getSchema(K k);
+    public T createSchema(K k);
+    public T updateSchema(K k);
+    public T getAllSchema(K k);
 }

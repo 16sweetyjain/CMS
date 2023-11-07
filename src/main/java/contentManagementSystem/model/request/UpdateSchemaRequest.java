@@ -1,10 +1,24 @@
 package contentManagementSystem.model.request;
 
-public class UpdateSchemaRequest extends BaseRequest{
+public class UpdateSchemaRequest<K> extends BaseRequest{
     String schemaId;
+    K schema;
+
+    public K getSchema() {
+        return schema;
+    }
+
+    public void setSchema(K schema) {
+        this.schema = schema;
+    }
 
     public UpdateSchemaRequest(String selectedSchema, String requestId) {
         super(selectedSchema, requestId);
+    }
+
+    public UpdateSchemaRequest(String selectedSchema, String requestId, String schemaId) {
+        super(selectedSchema, requestId);
+        this.schemaId = schemaId;
     }
 
     public String getSchemaId() {

@@ -1,6 +1,6 @@
 package contentManagementSystem.model.response;
 
-public class CreateSchemaResponse extends BaseResponse{
+public class CreateSchemaResponse extends BaseResponse {
     String schemaId;
 
     public CreateSchemaResponse(String schemaId) {
