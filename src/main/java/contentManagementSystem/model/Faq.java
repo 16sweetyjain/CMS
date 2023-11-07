@@ -3,7 +3,7 @@ package contentManagementSystem.model;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "faq")
-public class Faq  extends Schema{
+public class Faq  extends Schema {
     String title;
     String description;
 

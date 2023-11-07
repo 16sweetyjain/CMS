@@ -6,14 +6,19 @@ import contentManagementSystem.model.Faq;
 import contentManagementSystem.model.request.BaseRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Component
+@Service
 public class FaqCrudSchemaFactory implements CrudSchemaInterface<Faq> {
 
     @Autowired
-    FaqCustomRepositoryImpl faqCustomRepository;
+    private FaqCustomRepositoryImpl faqCustomRepository;
+
+    public FaqCrudSchemaFactory() {
+    }
+
 
     @Override
     public Faq getSchema(String schemaId) {

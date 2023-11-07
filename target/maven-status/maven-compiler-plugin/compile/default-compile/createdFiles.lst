@@ -15,6 +15,7 @@ contentManagementSystem/model/request/CreateHelpXSchemeRequestBody.class
 contentManagementSystem/controller/CreateHelpXSchemaController.class
 contentManagementSystem/model/response/GetAllSchemaResponse.class
 contentManagementSystem/model/request/GetAllSchemaRequest.class
+contentManagementSystem/config/MongoConfig.class
 contentManagementSystem/dal/HelpXCustomRepositoryImpl.class
 contentManagementSystem/dal/FaqCustomRepositoryImpl.class
 contentManagementSystem/controller/GetAllSchemaController.class
