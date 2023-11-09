@@ -43,7 +43,7 @@ public class FaqCrudSchemaFactory implements CrudSchemaInterface<BaseRequest, Ba
             e.printStackTrace();
         }
 
-        GetSchemaResponse response = new GetSchemaResponse();
+        GetSchemaResponse response = new GetSchemaResponse<Faq>();
 
         response.setSchema(faq);
 
@@ -103,6 +103,8 @@ public class FaqCrudSchemaFactory implements CrudSchemaInterface<BaseRequest, Ba
         }
         GetAllSchemaResponse getAllSchemaResponse = new GetAllSchemaResponse();
         getAllSchemaResponse.setSchemaList(faqList);
+
+
         return getAllSchemaResponse;
     }
 

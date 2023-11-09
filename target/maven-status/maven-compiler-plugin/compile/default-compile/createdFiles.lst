@@ -32,7 +32,6 @@ contentManagementSystem/model/request/CreateHelpXSchemaRequest.class
 contentManagementSystem/model/request/CreateFaqSchemaRequest.class
 contentManagementSystem/controller/GetHelpXSchemaListController.class
 contentManagementSystem/controller/GetHelpXSchemaController.class
-contentManagementSystem/model/Schema.class
 contentManagementSystem/controller/GetFaqSchemaController.class
 contentManagementSystem/dal/FaqCustomRepository.class
 contentManagementSystem/model/Author.class

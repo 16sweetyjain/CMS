@@ -1,14 +1,22 @@
 package contentManagementSystem.model;
 
+
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "faq")
-public class Faq  extends Schema {
+import javax.xml.validation.Schema;
+
+@Document(collection = "Faq")
+public class Faq {
+    @Id
+    String id;
+    String schemaId;
     String title;
     String description;
 
+
     public Faq(String schemaId, String title, String description) {
-        super(schemaId);
+        this.schemaId = schemaId;
         this.title = title;
         this.description = description;
     }

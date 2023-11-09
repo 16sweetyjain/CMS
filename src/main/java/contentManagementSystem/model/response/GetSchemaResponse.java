@@ -17,4 +17,11 @@ public class GetSchemaResponse<K> extends BaseResponse{
     public void setSchema(K schema) {
         this.schema = schema;
     }
+
+    @Override
+    public String toString() {
+        return "GetSchemaResponse{" +
+                "schema=" + schema +
+                "} " + super.toString();
+    }
 }

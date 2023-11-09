@@ -19,4 +19,11 @@ public class GetAllSchemaResponse<K> extends BaseResponse{
     public void setSchemaList(List<K> schemaList) {
         this.schemaList = schemaList;
     }
+
+    @Override
+    public String toString() {
+        return "GetAllSchemaResponse{" +
+                "schemaList=" + schemaList +
+                "} " + super.toString();
+    }
 }

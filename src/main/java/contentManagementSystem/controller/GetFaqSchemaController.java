@@ -21,16 +21,18 @@ public class GetFaqSchemaController {
 
         ResponseEntity responseEntity = null;
 
-
         GetSchemaRequest getSchemaRequest = new GetSchemaRequest(headers.get("x-request-id"),SchemaEnum.FAQSCHEMA ,faqId);
 
         GetSchemaResponse getSchemaResponse = new GetSchemaResponse();
         try {
             getSchemaResponse = (GetSchemaResponse) getService.driver(getSchemaRequest, getSchemaResponse);
+
             responseEntity = ResponseEntity.ok(getSchemaResponse);
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        System.out.println(responseEntity.toString());
 
         return responseEntity;
     }

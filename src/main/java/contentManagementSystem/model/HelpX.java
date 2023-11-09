@@ -1,9 +1,13 @@
 package contentManagementSystem.model;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "helpX")
-public class HelpX extends  Schema{
+public class HelpX{
+    @Id
+    String id;
+    String schemaId;
     String title;
     String subTitle;
     String description;
@@ -11,7 +15,7 @@ public class HelpX extends  Schema{
     String paragraph;
 
     public HelpX(String schemaId, String title, String subTitle, String description, Image image, String paragraph) {
-        super(schemaId);
+        this.schemaId = schemaId;
         this.title = title;
         this.subTitle = subTitle;
         this.description = description;

@@ -19,6 +19,7 @@ public class GetSchemaService extends SchemaTemplate<BaseRequest, BaseResponse> 
         CrudSchemaInterface crudSchemaInterface = getSchemaFactory.findStrategy(request.getSchemaEnum());
 
         GetSchemaResponse getSchemaResponse = (GetSchemaResponse) crudSchemaInterface.getSchema(request);
+
         return getSchemaResponse;
     }
 

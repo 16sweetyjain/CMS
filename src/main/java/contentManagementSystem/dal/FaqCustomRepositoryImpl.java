@@ -29,10 +29,16 @@ public class FaqCustomRepositoryImpl implements FaqCustomRepository{
 
     @Override
     public Faq getFaq(String id) {
-        Query query = new Query();
-        query.addCriteria(new Criteria("schemaId").is(id));
+        Query query = new Query(Criteria.where("schemaId").is(id));
 
-        return mongoTemplate.findOne(query, Faq.class);
+
+
+        Faq faq =  mongoTemplate.findOne(query, Faq.class);
+
+
+
+
+        return faq;
     }
 
     @Override
