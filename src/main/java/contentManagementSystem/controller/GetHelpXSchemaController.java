@@ -2,9 +2,8 @@ package contentManagementSystem.controller;
 
 import contentManagementSystem.model.request.GetSchemaRequest;
 import contentManagementSystem.model.response.GetSchemaResponse;
-import contentManagementSystem.schemaEnum.SchemaEnum;
-import contentManagementSystem.service.selectSchema.CrudSchemaInterface;
-import contentManagementSystem.service.selectSchema.GetSchemaFactory;
+import contentManagementSystem.enums.SchemaEnum;
+import contentManagementSystem.service.GetSchemaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -18,20 +17,19 @@ import java.util.Map;
 @RestController
 public class GetHelpXSchemaController {
     @Autowired
-    GetSchemaFactory getSchemaFactory;
+    GetSchemaService getService;
 
     @GetMapping(value = "/helpX/{helpXId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<GetSchemaResponse> getHelpXSchema(@PathVariable String helpXId, @RequestHeader Map<String, String> headers) {
 
         ResponseEntity responseEntity = null;
 
-        CrudSchemaInterface crudSchemaInterface = getSchemaFactory.createSchemaFactory(SchemaEnum.HELPX);
 
-        GetSchemaRequest getSchemaRequest = new GetSchemaRequest(headers.get("x-request-id"), helpXId);
+        GetSchemaRequest getSchemaRequest = new GetSchemaRequest(headers.get("x-request-id"), SchemaEnum.HELPXSCHEMA ,helpXId);
 
         GetSchemaResponse getSchemaResponse = new GetSchemaResponse();
         try {
-            getSchemaResponse = (GetSchemaResponse) crudSchemaInterface.getSchema(getSchemaRequest);
+            getSchemaResponse = (GetSchemaResponse) getService.driver(getSchemaRequest, getSchemaResponse);
             responseEntity = ResponseEntity.ok(getSchemaResponse);
         } catch (Exception e) {
             e.printStackTrace();

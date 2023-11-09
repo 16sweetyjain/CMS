@@ -1,13 +1,12 @@
 package contentManagementSystem.model.request;
 
+import contentManagementSystem.enums.SchemaEnum;
+
 public class GetSchemaRequest extends BaseRequest{
     String schemaId;
-    public GetSchemaRequest(String selectedSchema, String requestId) {
-        super(selectedSchema, requestId);
-    }
 
-    public GetSchemaRequest(String selectedSchema, String requestId, String schemaId) {
-        super(selectedSchema, requestId);
+    public GetSchemaRequest(String requestId, SchemaEnum schemaEnum, String schemaId) {
+        super(requestId, schemaEnum);
         this.schemaId = schemaId;
     }
 

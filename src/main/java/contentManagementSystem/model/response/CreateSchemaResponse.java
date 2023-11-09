@@ -17,4 +17,11 @@ public class CreateSchemaResponse extends BaseResponse {
     public void setSchemaId(String schemaId) {
         this.schemaId = schemaId;
     }
+
+    @Override
+    public String toString() {
+        return "CreateSchemaResponse{" +
+                "schemaId='" + schemaId + '\'' +
+                "} " + super.toString();
+    }
 }

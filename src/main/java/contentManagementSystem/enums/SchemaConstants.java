@@ -1,6 +1,6 @@
-package contentManagementSystem.schemaEnum;
+package contentManagementSystem.enums;
 
-public class SchemaEnum {
+public class SchemaConstants {
     public static final String FAQ = "FAQ";
     public static final String HELPX = "HELPX";
 }

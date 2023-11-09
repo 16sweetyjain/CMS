@@ -1,5 +1,7 @@
 package contentManagementSystem.model.request;
 
+import contentManagementSystem.enums.SchemaEnum;
+
 public class UpdateSchemaRequest<K> extends BaseRequest{
     String schemaId;
     K schema;
@@ -12,13 +14,10 @@ public class UpdateSchemaRequest<K> extends BaseRequest{
         this.schema = schema;
     }
 
-    public UpdateSchemaRequest(String selectedSchema, String requestId) {
-        super(selectedSchema, requestId);
-    }
-
-    public UpdateSchemaRequest(String selectedSchema, String requestId, String schemaId) {
-        super(selectedSchema, requestId);
+    public UpdateSchemaRequest(String requestId, SchemaEnum schemaEnum, String schemaId, K schema) {
+        super(requestId, schemaEnum);
         this.schemaId = schemaId;
+        this.schema = schema;
     }
 
     public String getSchemaId() {

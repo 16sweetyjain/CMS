@@ -1,10 +1,8 @@
-package contentManagementSystem.service.selectSchema;
+package contentManagementSystem.service.factory;
 
 
-import contentManagementSystem.model.request.BaseRequest;
-import contentManagementSystem.service.SchemaTemplate;
+import contentManagementSystem.enums.SchemaEnum;
 
-import java.util.List;
 // K - generic request object
 // T - generic response object
 public interface CrudSchemaInterface<K, T> {
@@ -12,4 +10,5 @@ public interface CrudSchemaInterface<K, T> {
     public T createSchema(K k);
     public T updateSchema(K k);
     public T getAllSchema(K k);
+    public SchemaEnum getStrategyName();
 }

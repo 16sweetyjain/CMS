@@ -1,59 +1,59 @@
-package contentManagementSystem.service.selectSchema;
+package contentManagementSystem.service.factory;
 
-
-import contentManagementSystem.dal.FaqCustomRepositoryImpl;
-import contentManagementSystem.model.Faq;
-import contentManagementSystem.model.request.BaseRequest;
-import contentManagementSystem.model.request.CreateFaqSchemaRequest;
-import contentManagementSystem.model.request.GetSchemaRequest;
-import contentManagementSystem.model.request.UpdateSchemaRequest;
+import contentManagementSystem.dal.HelpXCustomRepositoryImpl;
+import contentManagementSystem.model.HelpX;
+import contentManagementSystem.model.request.*;
 import contentManagementSystem.model.response.*;
+import contentManagementSystem.enums.SchemaEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
+
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-@Service
-public class FaqCrudSchemaFactory implements CrudSchemaInterface<BaseRequest, BaseResponse>{
+@Component
+public class HelpXCrudSchemaFactory implements CrudSchemaInterface<BaseRequest, BaseResponse> {
 
     @Autowired
-    private FaqCustomRepositoryImpl faqCustomRepository;
-
-
-    public FaqCrudSchemaFactory() {
-    }
+    HelpXCustomRepositoryImpl helpXCustomRepository;
 
 
     @Override
+    public SchemaEnum getStrategyName() {
+        return SchemaEnum.HELPXSCHEMA;
+    }
+
+    @Override
     public BaseResponse getSchema(BaseRequest baseRequest) {
+
         GetSchemaRequest request = (GetSchemaRequest) baseRequest;
 
-        Faq faq = null;
+        HelpX helpX  = null;
 
         try {
-             faq = faqCustomRepository.getFaq(request.getSchemaId());
+            helpX = helpXCustomRepository.getHelpXArticle(request.getSchemaId());
         }catch(Exception e) {
             e.printStackTrace();
         }
 
         GetSchemaResponse response = new GetSchemaResponse();
 
-        response.setSchema(faq);
+        response.setSchema(helpX);
 
         return response;
     }
 
     @Override
     public BaseResponse createSchema(BaseRequest baseRequest) {
-        String faqId = UUID.randomUUID().toString();
-        CreateFaqSchemaRequest request = (CreateFaqSchemaRequest) baseRequest;
-        Faq faq = new Faq(faqId, request.getTitle(), request.getDescription());
+        String helpXId = UUID.randomUUID().toString();
+        CreateHelpXSchemaRequest request = (CreateHelpXSchemaRequest) baseRequest;
+
+            HelpX helpX = new HelpX(helpXId, request.getTitle(), request.getSubTitle(), request.getDescription(), request.getImage(), request.getParagraph());
 
         try{
-            faqCustomRepository.addFaq(faq);
+            helpXCustomRepository.addHelpXArticle(helpX);
 
         }catch(Exception e) {
             e.printStackTrace();
@@ -62,21 +62,20 @@ public class FaqCrudSchemaFactory implements CrudSchemaInterface<BaseRequest, Ba
 
         CreateSchemaResponse response = new CreateSchemaResponse();
 
-        response.setSchemaId(faqId);
+        response.setSchemaId(helpXId);
 
         return response;
     }
 
-
     @Override
     public BaseResponse updateSchema(BaseRequest baseRequest) {
         UpdateSchemaRequest request = (UpdateSchemaRequest) baseRequest;
-        Faq updatedFaq = null;
+        HelpX updatedHelpX = null;
         try{
-            Faq faq = (Faq) request.getSchema();
+            HelpX helpX = (HelpX) request.getSchema();
 
 
-            updatedFaq = faqCustomRepository.updateFaq(faq);
+            updatedHelpX = helpXCustomRepository.updateHelpXArticle(helpX);
 
         }catch(Exception e) {
             e.printStackTrace();
@@ -84,7 +83,7 @@ public class FaqCrudSchemaFactory implements CrudSchemaInterface<BaseRequest, Ba
 
         UpdateSchemaResponse response = new UpdateSchemaResponse();
 
-        response.setSchema(updatedFaq);
+        response.setSchema(updatedHelpX);
 
         return response;
 
@@ -92,16 +91,14 @@ public class FaqCrudSchemaFactory implements CrudSchemaInterface<BaseRequest, Ba
 
     @Override
     public BaseResponse getAllSchema(BaseRequest baseRequest) {
-        List<Faq> faqList = new ArrayList<>();
+        List<HelpX> helpXList = new ArrayList<>();
         try {
-             faqList = faqCustomRepository.getAllFaq();
+            helpXList = helpXCustomRepository.getAllHelpXArticle();
         }catch (Exception e) {
             e.printStackTrace();
         }
         GetAllSchemaResponse getAllSchemaResponse = new GetAllSchemaResponse();
-        getAllSchemaResponse.setSchemaList(faqList);
+        getAllSchemaResponse.setSchemaList(helpXList);
         return getAllSchemaResponse;
     }
-
-
 }

@@ -1,5 +1,6 @@
 package contentManagementSystem.model.request;
 
+import contentManagementSystem.enums.SchemaEnum;
 import contentManagementSystem.model.Image;
 
 public class CreateHelpXSchemaRequest extends BaseRequest {
@@ -9,8 +10,8 @@ public class CreateHelpXSchemaRequest extends BaseRequest {
     Image image;
     String paragraph;
 
-    public CreateHelpXSchemaRequest(String selectedSchema, String requestId, String title, String subTitle, String description, Image image, String paragraph) {
-        super(selectedSchema, requestId);
+    public CreateHelpXSchemaRequest(String requestId, SchemaEnum schemaEnum, String title, String subTitle, String description, Image image, String paragraph) {
+        super(requestId, schemaEnum);
         this.title = title;
         this.subTitle = subTitle;
         this.description = description;
