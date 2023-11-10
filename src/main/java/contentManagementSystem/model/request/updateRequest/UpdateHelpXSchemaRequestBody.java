@@ -1,5 +1,6 @@
 package contentManagementSystem.model.request.updateRequest;
 
+import contentManagementSystem.enums.SchemaEnum;
 import contentManagementSystem.model.Image;
 
 public class UpdateHelpXSchemaRequestBody {
@@ -8,6 +9,7 @@ public class UpdateHelpXSchemaRequestBody {
     String description;
     Image image;
     String paragraph;
+    SchemaEnum schemaEnum;
 
     public UpdateHelpXSchemaRequestBody() {
     }

@@ -25,8 +25,9 @@ public class GetHelpXSchemaController {
         ResponseEntity responseEntity = null;
 
 
-        GetSchemaRequest getSchemaRequest = new GetSchemaRequest(headers.get("x-request-id"), SchemaEnum.HELPXSCHEMA ,helpXId);
+        GetSchemaRequest getSchemaRequest = new GetSchemaRequest(headers.get("x-request-id"), headers.get("x-gw-auth-id"), SchemaEnum.HELPXSCHEMA ,helpXId);
 
+        getSchemaRequest.setHeaders(headers);
         GetSchemaResponse getSchemaResponse = new GetSchemaResponse();
         try {
             getSchemaResponse = (GetSchemaResponse) getService.driver(getSchemaRequest, getSchemaResponse);

@@ -3,8 +3,9 @@ package contentManagementSystem.model.request.updateRequest;
 import contentManagementSystem.enums.SchemaEnum;
 import contentManagementSystem.model.Image;
 import contentManagementSystem.model.request.BaseRequest;
+import contentManagementSystem.model.request.BaseSchemaRequest;
 
-public class UpdateHelpXSchemaRequest extends BaseRequest {
+public class UpdateHelpXSchemaRequest extends BaseSchemaRequest {
     String schemaId;
     String title;
     String subTitle;
@@ -12,12 +13,12 @@ public class UpdateHelpXSchemaRequest extends BaseRequest {
     Image image;
     String paragraph;
 
-    public UpdateHelpXSchemaRequest(String requestId, SchemaEnum schemaEnum) {
-        super(requestId, schemaEnum);
+    public UpdateHelpXSchemaRequest(String requestId, String userId, SchemaEnum schemaEnum) {
+        super(requestId, userId, schemaEnum);
     }
 
-    public UpdateHelpXSchemaRequest(String requestId, SchemaEnum schemaEnum, String schemaId, String title, String subTitle, String description, Image image, String paragraph) {
-        super(requestId, schemaEnum);
+    public UpdateHelpXSchemaRequest(String requestId, String userId, SchemaEnum schemaEnum, String schemaId, String title, String subTitle, String description, Image image, String paragraph) {
+        super(requestId, userId, schemaEnum);
         this.schemaId = schemaId;
         this.title = title;
         this.subTitle = subTitle;

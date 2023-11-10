@@ -1,22 +1,25 @@
 package contentManagementSystem.service;
 
 import contentManagementSystem.model.request.BaseRequest;
+import contentManagementSystem.model.request.BaseSchemaRequest;
 import contentManagementSystem.model.response.BaseResponse;
 import contentManagementSystem.model.response.CreateSchemaResponse;
-import contentManagementSystem.service.factory.CrudSchemaInterface;
+import contentManagementSystem.service.factory.CrudInterface;
 import contentManagementSystem.service.factory.GetSchemaFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CreateSchemaService extends SchemaTemplate<BaseRequest, BaseResponse> {
+public class CreateSchemaService extends SchemaTemplate<BaseSchemaRequest, BaseResponse> {
 
     @Autowired
     GetSchemaFactory getSchemaFactory;
-    @Override
-    protected BaseResponse process(BaseRequest request, BaseResponse response) {
 
-        CrudSchemaInterface crudSchemaInterface = getSchemaFactory.findStrategy(request.getSchemaEnum());
+
+    @Override
+    protected BaseResponse process(BaseSchemaRequest request, BaseResponse response) {
+
+        CrudInterface crudSchemaInterface = getSchemaFactory.findStrategy(request.getSchemaEnum());
 
         CreateSchemaResponse createSchemaResponse = (CreateSchemaResponse) crudSchemaInterface.createSchema(request);
 
@@ -24,7 +27,7 @@ public class CreateSchemaService extends SchemaTemplate<BaseRequest, BaseRespons
     }
 
     @Override
-    protected BaseResponse postprocess(BaseRequest request) {
+    protected BaseResponse postprocess(BaseSchemaRequest request) {
         return null;
     }
 }

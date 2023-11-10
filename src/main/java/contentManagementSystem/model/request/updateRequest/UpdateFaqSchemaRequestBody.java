@@ -1,8 +1,11 @@
 package contentManagementSystem.model.request.updateRequest;
 
+import contentManagementSystem.enums.SchemaEnum;
+
 public class UpdateFaqSchemaRequestBody {
     String description;
     String title;
+    SchemaEnum schemaEnum;
 
     public UpdateFaqSchemaRequestBody() {
     }

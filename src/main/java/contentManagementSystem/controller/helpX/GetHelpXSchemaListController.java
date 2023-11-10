@@ -27,8 +27,9 @@ public class GetHelpXSchemaListController {
 
             ResponseEntity responseEntity = null;
 
-            GetAllSchemaRequest getAllSchemaRequest = new GetAllSchemaRequest(headers.get("x-request-id"), SchemaEnum.HELPXSCHEMA);
+            GetAllSchemaRequest getAllSchemaRequest = new GetAllSchemaRequest(headers.get("x-request-id"), headers.get("x-gw-auth-id"), SchemaEnum.HELPXSCHEMA);
 
+            getAllSchemaRequest.setHeaders(headers);
             GetAllSchemaResponse getAllSchemaResponse = new GetAllSchemaResponse();
             try {
                 getAllSchemaResponse = (GetAllSchemaResponse) getSchemaListService.driver(getAllSchemaRequest, getAllSchemaResponse);

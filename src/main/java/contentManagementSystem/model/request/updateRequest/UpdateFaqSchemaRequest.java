@@ -3,18 +3,19 @@ package contentManagementSystem.model.request.updateRequest;
 import contentManagementSystem.enums.SchemaEnum;
 import contentManagementSystem.model.Faq;
 import contentManagementSystem.model.request.BaseRequest;
+import contentManagementSystem.model.request.BaseSchemaRequest;
 
-public class UpdateFaqSchemaRequest extends BaseRequest {
+public class UpdateFaqSchemaRequest extends BaseSchemaRequest {
     String schemaId;
     String description;
     String title;
 
-    public UpdateFaqSchemaRequest(String requestId, SchemaEnum schemaEnum) {
-        super(requestId, schemaEnum);
+    public UpdateFaqSchemaRequest(String requestId, String userId, SchemaEnum schemaEnum) {
+        super(requestId, userId, schemaEnum);
     }
 
-    public UpdateFaqSchemaRequest(String requestId, SchemaEnum schemaEnum, String schemaId, String description, String title) {
-        super(requestId, schemaEnum);
+    public UpdateFaqSchemaRequest(String requestId, String userId, SchemaEnum schemaEnum, String schemaId, String description, String title) {
+        super(requestId, userId, schemaEnum);
         this.schemaId = schemaId;
         this.description = description;
         this.title = title;

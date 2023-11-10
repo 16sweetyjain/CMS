@@ -2,21 +2,24 @@ package contentManagementSystem.model.request;
 
 import contentManagementSystem.enums.SchemaEnum;
 
+import java.util.Map;
+
 public class BaseRequest {
     String requestId;
-    SchemaEnum schemaEnum;
+    String userId;
+    Map<String, String> headers;
 
-    public BaseRequest(String requestId, SchemaEnum schemaEnum) {
+    public Map<String, String> getHeaders() {
+        return headers;
+    }
+
+    public void setHeaders(Map<String, String> headers) {
+        this.headers = headers;
+    }
+
+    public BaseRequest(String requestId, String userId) {
         this.requestId = requestId;
-        this.schemaEnum = schemaEnum;
-    }
-
-    public SchemaEnum getSchemaEnum() {
-        return schemaEnum;
-    }
-
-    public void setSchemaEnum(SchemaEnum schemaEnum) {
-        this.schemaEnum = schemaEnum;
+        this.userId = userId;
     }
 
     public String getRequestId() {
@@ -27,11 +30,11 @@ public class BaseRequest {
         this.requestId = requestId;
     }
 
+    public String getUserId() {
+        return userId;
+    }
 
-    @Override
-    public String toString() {
-        return "BaseRequest{" +
-                ", requestId='" + requestId + '\'' +
-                '}';
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }

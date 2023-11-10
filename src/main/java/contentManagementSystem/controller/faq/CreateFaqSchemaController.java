@@ -22,8 +22,8 @@ public class CreateFaqSchemaController {
 
         ResponseEntity responseEntity = null;
 
-        CreateFaqSchemaRequest createFaqSchemaRequest = new CreateFaqSchemaRequest(headers.get("x-request-id"),SchemaEnum.FAQSCHEMA,  createFaqSchemaRequestBody.getDescription(), createFaqSchemaRequestBody.getTitle());
-
+        CreateFaqSchemaRequest createFaqSchemaRequest = new CreateFaqSchemaRequest(headers.get("x-request-id"),headers.get("x-gw-auth-id"), SchemaEnum.FAQSCHEMA,  createFaqSchemaRequestBody.getDescription(), createFaqSchemaRequestBody.getTitle());
+        createFaqSchemaRequest.setHeaders(headers);
         CreateSchemaResponse createSchemaResponse = new CreateSchemaResponse();
 
         try {

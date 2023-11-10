@@ -4,7 +4,6 @@ package contentManagementSystem.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.xml.validation.Schema;
 
 @Document(collection = "Faq")
 public class Faq {
@@ -13,8 +12,24 @@ public class Faq {
     String schemaId;
     String title;
     String description;
+    String userId;
 
     public Faq() {
+    }
+
+    public Faq(String schemaId, String title, String description, String userId) {
+        this.schemaId = schemaId;
+        this.title = title;
+        this.description = description;
+        this.userId = userId;
+    }
+
+    public Faq(String id, String schemaId, String title, String description, String userId) {
+        this.id = id;
+        this.schemaId = schemaId;
+        this.title = title;
+        this.description = description;
+        this.userId = userId;
     }
 
     public String getId() {
@@ -49,17 +64,12 @@ public class Faq {
         this.description = description;
     }
 
-    public Faq(String id, String schemaId, String title, String description) {
-        this.id = id;
-        this.schemaId = schemaId;
-        this.title = title;
-        this.description = description;
+    public String getUserId() {
+        return userId;
     }
 
-    public Faq(String schemaId, String title, String description) {
-        this.schemaId = schemaId;
-        this.title = title;
-        this.description = description;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     @Override

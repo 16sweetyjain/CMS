@@ -21,8 +21,8 @@ public class GetFaqSchemaController {
 
         ResponseEntity responseEntity = null;
 
-        GetSchemaRequest getSchemaRequest = new GetSchemaRequest(headers.get("x-request-id"),SchemaEnum.FAQSCHEMA ,faqId);
-
+        GetSchemaRequest getSchemaRequest = new GetSchemaRequest(headers.get("x-request-id"), headers.get("x-gw-auth-id"), SchemaEnum.FAQSCHEMA ,faqId);
+        getSchemaRequest.setHeaders(headers);
         GetSchemaResponse getSchemaResponse = new GetSchemaResponse();
         try {
             getSchemaResponse = (GetSchemaResponse) getService.driver(getSchemaRequest, getSchemaResponse);

@@ -17,16 +17,16 @@ import java.util.List;
 import java.util.UUID;
 
 @Component
-public class FaqCrudSchemaFactory implements CrudSchemaInterface<BaseRequest, BaseResponse>{
+public class FaqCrudFactory implements CrudInterface<BaseRequest, BaseResponse> {
 
     @Autowired
     private FaqCustomRepositoryImpl faqCustomRepository;
 
 
-    public FaqCrudSchemaFactory() {
+    public FaqCrudFactory() {
     }
 
-    public FaqCrudSchemaFactory(String faq) {
+    public FaqCrudFactory(String faq) {
     }
 
 
@@ -54,7 +54,7 @@ public class FaqCrudSchemaFactory implements CrudSchemaInterface<BaseRequest, Ba
     public BaseResponse createSchema(BaseRequest baseRequest) {
         String faqId = UUID.randomUUID().toString();
         CreateFaqSchemaRequest request = (CreateFaqSchemaRequest) baseRequest;
-        Faq faq = new Faq(faqId, request.getTitle(), request.getDescription());
+        Faq faq = new Faq(faqId, request.getTitle(), request.getDescription(), request.getUserId());
 
         try{
             faqCustomRepository.addFaq(faq);
@@ -77,7 +77,7 @@ public class FaqCrudSchemaFactory implements CrudSchemaInterface<BaseRequest, Ba
         Faq updatedFaq = null;
         try{
 
-            Faq faq = new Faq(request.getSchemaId(), request.getTitle(), request.getDescription());
+            Faq faq = new Faq(request.getSchemaId(), request.getTitle(), request.getDescription(), request.getUserId());
             String faqId = request.getSchemaId();
 
             updatedFaq = faqCustomRepository.updateFaq(faq, faqId);

@@ -22,8 +22,9 @@ public class UpdateFaqSchemaController {
 
         ResponseEntity responseEntity = null;
 
-        UpdateFaqSchemaRequest updateFaqSchemaRequest = new UpdateFaqSchemaRequest(headers.get("x-request-id"), SchemaEnum.FAQSCHEMA, faqId, updateFaqSchemaRequestBody.getTitle(), updateFaqSchemaRequestBody.getDescription());
+        UpdateFaqSchemaRequest updateFaqSchemaRequest = new UpdateFaqSchemaRequest(headers.get("x-request-id"), headers.get("x-gw-auth-id"), SchemaEnum.FAQSCHEMA, faqId, updateFaqSchemaRequestBody.getTitle(), updateFaqSchemaRequestBody.getDescription());
 
+        updateFaqSchemaRequest.setHeaders(headers);
         UpdateSchemaResponse updateSchemaResponse = new UpdateSchemaResponse();
 
         try {

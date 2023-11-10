@@ -22,8 +22,9 @@ public class UpdateHelpXSchemaController {
 
         ResponseEntity responseEntity = null;
 
-        UpdateHelpXSchemaRequest updateSchemaRequest = new UpdateHelpXSchemaRequest(headers.get("x-request-id"), SchemaEnum.HELPXSCHEMA, helpXId, updateHelpXSchemaRequestBody.getTitle(), updateHelpXSchemaRequestBody.getSubTitle(), updateHelpXSchemaRequestBody.getDescription(), updateHelpXSchemaRequestBody.getImage(), updateHelpXSchemaRequestBody.getParagraph());
+        UpdateHelpXSchemaRequest updateSchemaRequest = new UpdateHelpXSchemaRequest(headers.get("x-request-id"), headers.get("x-gw-auth-id"), SchemaEnum.HELPXSCHEMA, helpXId, updateHelpXSchemaRequestBody.getTitle(), updateHelpXSchemaRequestBody.getSubTitle(), updateHelpXSchemaRequestBody.getDescription(), updateHelpXSchemaRequestBody.getImage(), updateHelpXSchemaRequestBody.getParagraph());
 
+        updateSchemaRequest.setHeaders(headers);
         UpdateSchemaResponse updateSchemaResponse = new UpdateSchemaResponse();
 
         try {

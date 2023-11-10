@@ -13,11 +13,22 @@ public class HelpX{
     String description;
     Image image;
     String paragraph;
+    String userId;
 
     public HelpX() {
     }
 
-    public HelpX(String id, String schemaId, String title, String subTitle, String description, Image image, String paragraph) {
+    public HelpX(String schemaId, String title, String subTitle, String description, Image image, String paragraph, String userId) {
+        this.schemaId = schemaId;
+        this.title = title;
+        this.subTitle = subTitle;
+        this.description = description;
+        this.image = image;
+        this.paragraph = paragraph;
+        this.userId = userId;
+    }
+
+    public HelpX(String id, String schemaId, String title, String subTitle, String description, Image image, String paragraph, String userId) {
         this.id = id;
         this.schemaId = schemaId;
         this.title = title;
@@ -25,15 +36,7 @@ public class HelpX{
         this.description = description;
         this.image = image;
         this.paragraph = paragraph;
-    }
-
-    public HelpX(String schemaId, String title, String subTitle, String description, Image image, String paragraph) {
-        this.schemaId = schemaId;
-        this.title = title;
-        this.subTitle = subTitle;
-        this.description = description;
-        this.image = image;
-        this.paragraph = paragraph;
+        this.userId = userId;
     }
 
     public String getId() {
@@ -46,6 +49,14 @@ public class HelpX{
 
     public String getSchemaId() {
         return schemaId;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public void setSchemaId(String schemaId) {

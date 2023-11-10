@@ -1,16 +1,22 @@
 package contentManagementSystem.service;
 
+import contentManagementSystem.model.User;
 import contentManagementSystem.model.request.BaseRequest;
+import contentManagementSystem.model.request.user.FindUserRequest;
 import contentManagementSystem.model.response.BaseResponse;
 import contentManagementSystem.service.factory.GetSchemaFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public abstract class SchemaTemplate<T extends BaseRequest, K extends BaseResponse> {
 
-    public K driver(T request, K response) {
+    @Autowired
+    UserService userService;
 
-        //validate request user
-        validate(request, response);
+    public K driver(T request, K response) throws Exception {
+
+        //validate if user is allowed to call api or not
+        request = validateUser(request, response);
+
 
         //perform business logic
         response = process(request, response);
@@ -21,8 +27,18 @@ public abstract class SchemaTemplate<T extends BaseRequest, K extends BaseRespon
         return response;
     }
 
-    protected  K validate(T request, K response) {
-        return null;
+    protected T validateUser(T request, K response) throws Exception {
+
+        String userId = request.getHeaders().get("x-gw-auth-id");
+
+        if(userService.findUserByUserId(userId) == null) {
+            //user not found exception to be thrown
+            throw new Exception();
+        }
+
+        request.setUserId(userId);
+
+        return request;
     }
 
     protected abstract K process(T request, K response);

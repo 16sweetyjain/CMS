@@ -24,7 +24,8 @@ public class GetFaqSchemaListController {
 
         ResponseEntity responseEntity = null;
 
-        GetAllSchemaRequest getAllSchemaRequest = new GetAllSchemaRequest(headers.get("x-request-id"), SchemaEnum.FAQSCHEMA);
+        GetAllSchemaRequest getAllSchemaRequest = new GetAllSchemaRequest(headers.get("x-request-id"), headers.get("x-gw-auth-id"), SchemaEnum.FAQSCHEMA);
+        getAllSchemaRequest.setHeaders(headers);
 
         GetAllSchemaResponse getAllSchemaResponse = new GetAllSchemaResponse();
         try {

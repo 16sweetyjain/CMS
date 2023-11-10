@@ -26,8 +26,8 @@ public class CreateHelpXSchemaController {
 
         ResponseEntity responseEntity = null;
 
-        CreateHelpXSchemaRequest createHelpXSchemaRequest = new CreateHelpXSchemaRequest(headers.get("x-request-id"),SchemaEnum.HELPXSCHEMA, createHelpXSchemeRequestBody.getTitle(),createHelpXSchemeRequestBody.getSubTitle(), createHelpXSchemeRequestBody.getDescription(), createHelpXSchemeRequestBody.getImage(), createHelpXSchemeRequestBody.getParagraph());
-
+        CreateHelpXSchemaRequest createHelpXSchemaRequest = new CreateHelpXSchemaRequest(headers.get("x-request-id"), headers.get("x-gw-auth-id"), SchemaEnum.HELPXSCHEMA, createHelpXSchemeRequestBody.getTitle(),createHelpXSchemeRequestBody.getSubTitle(), createHelpXSchemeRequestBody.getDescription(), createHelpXSchemeRequestBody.getImage(), createHelpXSchemeRequestBody.getParagraph());
+        createHelpXSchemaRequest.setHeaders(headers);
         CreateSchemaResponse createSchemaResponse = new CreateSchemaResponse();
 
         try {

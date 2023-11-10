@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Component
-public class HelpXCrudSchemaFactory implements CrudSchemaInterface<BaseRequest, BaseResponse> {
+public class HelpXCrudFactory implements CrudInterface<BaseRequest, BaseResponse> {
 
     @Autowired
     HelpXCustomRepositoryImpl helpXCustomRepository;
@@ -53,7 +53,7 @@ public class HelpXCrudSchemaFactory implements CrudSchemaInterface<BaseRequest, 
         String helpXId = UUID.randomUUID().toString();
         CreateHelpXSchemaRequest request = (CreateHelpXSchemaRequest) baseRequest;
 
-            HelpX helpX = new HelpX(helpXId, request.getTitle(), request.getSubTitle(), request.getDescription(), request.getImage(), request.getParagraph());
+            HelpX helpX = new HelpX(helpXId, request.getTitle(), request.getSubTitle(), request.getDescription(), request.getImage(), request.getParagraph(), request.getUserId());
 
         try{
             helpXCustomRepository.addHelpXArticle(helpX);
@@ -75,7 +75,7 @@ public class HelpXCrudSchemaFactory implements CrudSchemaInterface<BaseRequest, 
         HelpX updatedHelpX = null;
         try{
 
-            HelpX helpX = new HelpX(request.getSchemaId(), request.getTitle(), request.getSubTitle(), request.getDescription(), request.getImage(), request.getParagraph());
+            HelpX helpX = new HelpX(request.getSchemaId(), request.getTitle(), request.getSubTitle(), request.getDescription(), request.getImage(), request.getParagraph(), request.getUserId());
             String helpXId = request.getSchemaId();
 
             updatedHelpX = helpXCustomRepository.updateHelpXArticle(helpX, helpXId);
