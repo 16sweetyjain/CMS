@@ -37,6 +37,8 @@ contentManagementSystem/dal/FaqCustomRepository.class
 contentManagementSystem/model/Author.class
 contentManagementSystem/controller/CreateFaqSchemaController.class
 contentManagementSystem/model/Image.class
+contentManagementSystem/model/request/UpdateHelpXSchemaRequestBody.class
 contentManagementSystem/enums/SchemaConstants.class
 contentManagementSystem/controller/UpdateFaqSchemaController.class
+contentManagementSystem/model/request/UpdateFaqSchemaRequestBody.class
 contentManagementSystem/service/GetSchemaService.class

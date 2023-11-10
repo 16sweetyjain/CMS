@@ -9,5 +9,5 @@ public interface HelpXCustomRepository {
     public List<HelpX> getAllHelpXArticle();
     public HelpX getHelpXArticle(String id);
     public HelpX addHelpXArticle(HelpX helpX);
-    public HelpX updateHelpXArticle(HelpX helpX);
+    public HelpX updateHelpXArticle(HelpX helpX, String helpxId);
 }

@@ -1,6 +1,7 @@
 package contentManagementSystem.controller;
 
 import contentManagementSystem.model.request.CreateHelpXSchemeRequestBody;
+import contentManagementSystem.model.request.UpdateHelpXSchemaRequestBody;
 import contentManagementSystem.model.request.UpdateSchemaRequest;
 import contentManagementSystem.model.response.CreateSchemaResponse;
 import contentManagementSystem.model.response.UpdateSchemaResponse;
@@ -19,11 +20,11 @@ public class UpdateHelpXSchemaController {
     UpdateSchemaService updateService;
 
     @PutMapping(value = "/helpX/{helpXId}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<CreateSchemaResponse> updateHelpXSchema(@PathVariable String helpXId, @RequestBody CreateHelpXSchemeRequestBody createHelpXSchemeRequestBody, @RequestHeader Map<String, String> headers) {
+    public ResponseEntity<UpdateSchemaResponse> updateHelpXSchema(@PathVariable String helpXId, @RequestBody UpdateHelpXSchemaRequestBody updateHelpXSchemaRequestBody, @RequestHeader Map<String, String> headers) {
 
         ResponseEntity responseEntity = null;
 
-        UpdateSchemaRequest updateSchemaRequest = new UpdateSchemaRequest(headers.get("x-request-id"), SchemaEnum.HELPXSCHEMA, helpXId, createHelpXSchemeRequestBody);
+        UpdateSchemaRequest updateSchemaRequest = new UpdateSchemaRequest(headers.get("x-request-id"), SchemaEnum.HELPXSCHEMA, helpXId, updateHelpXSchemaRequestBody);
 
         UpdateSchemaResponse updateSchemaResponse = new UpdateSchemaResponse();
 

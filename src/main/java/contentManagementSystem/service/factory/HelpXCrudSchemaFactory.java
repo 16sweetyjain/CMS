@@ -59,7 +59,6 @@ public class HelpXCrudSchemaFactory implements CrudSchemaInterface<BaseRequest, 
             e.printStackTrace();
         }
 
-
         CreateSchemaResponse response = new CreateSchemaResponse();
 
         response.setSchemaId(helpXId);
@@ -73,9 +72,9 @@ public class HelpXCrudSchemaFactory implements CrudSchemaInterface<BaseRequest, 
         HelpX updatedHelpX = null;
         try{
             HelpX helpX = (HelpX) request.getSchema();
+            String helpXId = request.getSchemaId();
 
-
-            updatedHelpX = helpXCustomRepository.updateHelpXArticle(helpX);
+            updatedHelpX = helpXCustomRepository.updateHelpXArticle(helpX, helpXId);
 
         }catch(Exception e) {
             e.printStackTrace();

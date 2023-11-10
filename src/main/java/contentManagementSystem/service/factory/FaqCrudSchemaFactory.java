@@ -78,9 +78,9 @@ public class FaqCrudSchemaFactory implements CrudSchemaInterface<BaseRequest, Ba
         Faq updatedFaq = null;
         try{
             Faq faq = (Faq) request.getSchema();
+            String faqId = request.getSchemaId();
 
-
-            updatedFaq = faqCustomRepository.updateFaq(faq);
+            updatedFaq = faqCustomRepository.updateFaq(faq, faqId);
 
         }catch(Exception e) {
             e.printStackTrace();

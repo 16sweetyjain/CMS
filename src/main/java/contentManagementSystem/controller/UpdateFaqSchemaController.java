@@ -1,6 +1,7 @@
 package contentManagementSystem.controller;
 
 import contentManagementSystem.model.request.CreateFaqSchemaRequestBody;
+import contentManagementSystem.model.request.UpdateFaqSchemaRequestBody;
 import contentManagementSystem.model.request.UpdateSchemaRequest;
 import contentManagementSystem.model.response.CreateSchemaResponse;
 import contentManagementSystem.model.response.UpdateSchemaResponse;
@@ -19,11 +20,11 @@ public class UpdateFaqSchemaController {
     UpdateSchemaService updateService;
 
     @PutMapping(value = "/faq/{faqId}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<CreateSchemaResponse> updateFaqSchema(@PathVariable String faqId, @RequestBody CreateFaqSchemaRequestBody createFaqSchemaRequestBody, @RequestHeader Map<String, String> headers) {
+    public ResponseEntity<UpdateSchemaResponse> updateFaqSchema(@PathVariable String faqId, @RequestBody UpdateFaqSchemaRequestBody updateFaqSchemaRequestBody, @RequestHeader Map<String, String> headers) {
 
         ResponseEntity responseEntity = null;
 
-        UpdateSchemaRequest updateFaqSchemaRequest = new UpdateSchemaRequest(headers.get("x-request-id"), SchemaEnum.FAQSCHEMA, faqId, createFaqSchemaRequestBody);
+        UpdateSchemaRequest updateFaqSchemaRequest = new UpdateSchemaRequest(headers.get("x-request-id"), SchemaEnum.FAQSCHEMA, faqId, updateFaqSchemaRequestBody);
 
         UpdateSchemaResponse updateSchemaResponse = new UpdateSchemaResponse();
 
