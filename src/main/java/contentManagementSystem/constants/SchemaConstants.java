@@ -1,4 +1,4 @@
-package contentManagementSystem.enums;
+package contentManagementSystem.constants;
 
 public class SchemaConstants {
     public static final String FAQ = "FAQ";

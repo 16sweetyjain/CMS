@@ -1,15 +1,18 @@
-package contentManagementSystem.model.request;
+package contentManagementSystem.model.request.createRequest;
 
+import contentManagementSystem.enums.SchemaEnum;
 import contentManagementSystem.model.Image;
+import contentManagementSystem.model.request.BaseRequest;
 
-public class CreateHelpXSchemeRequestBody {
+public class CreateHelpXSchemaRequest extends BaseRequest {
     String title;
     String subTitle;
     String description;
     Image image;
     String paragraph;
 
-    public CreateHelpXSchemeRequestBody(String title, String subTitle, String description, Image image, String paragraph) {
+    public CreateHelpXSchemaRequest(String requestId, SchemaEnum schemaEnum, String title, String subTitle, String description, Image image, String paragraph) {
+        super(requestId, schemaEnum);
         this.title = title;
         this.subTitle = subTitle;
         this.description = description;
@@ -55,8 +58,5 @@ public class CreateHelpXSchemeRequestBody {
 
     public void setParagraph(String paragraph) {
         this.paragraph = paragraph;
-    }
-
-    public CreateHelpXSchemeRequestBody() {
     }
 }

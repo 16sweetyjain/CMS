@@ -1,7 +1,7 @@
-package contentManagementSystem.controller;
+package contentManagementSystem.controller.helpX;
 
-import contentManagementSystem.model.request.CreateHelpXSchemaRequest;
-import contentManagementSystem.model.request.CreateHelpXSchemeRequestBody;
+import contentManagementSystem.model.request.createRequest.CreateHelpXSchemaRequest;
+import contentManagementSystem.model.request.createRequest.CreateHelpXSchemeRequestBody;
 import contentManagementSystem.model.response.CreateSchemaResponse;
 import contentManagementSystem.model.response.GetAllSchemaResponse;
 import contentManagementSystem.enums.SchemaEnum;

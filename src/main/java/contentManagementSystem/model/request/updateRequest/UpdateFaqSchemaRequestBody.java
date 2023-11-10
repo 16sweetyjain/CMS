@@ -1,4 +1,4 @@
-package contentManagementSystem.model.request;
+package contentManagementSystem.model.request.updateRequest;
 
 public class UpdateFaqSchemaRequestBody {
     String description;

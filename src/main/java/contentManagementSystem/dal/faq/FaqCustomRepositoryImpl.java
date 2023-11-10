@@ -1,5 +1,6 @@
-package contentManagementSystem.dal;
+package contentManagementSystem.dal.faq;
 
+import contentManagementSystem.dal.faq.FaqCustomRepository;
 import contentManagementSystem.model.Faq;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class FaqCustomRepositoryImpl implements FaqCustomRepository{
+public class FaqCustomRepositoryImpl implements FaqCustomRepository {
 
     @Autowired
     MongoTemplate mongoTemplate;

@@ -1,4 +1,4 @@
-package contentManagementSystem.dal;
+package contentManagementSystem.dal.faq;
 
 import contentManagementSystem.model.Faq;
 import org.springframework.stereotype.Repository;

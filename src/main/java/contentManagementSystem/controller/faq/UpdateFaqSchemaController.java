@@ -1,7 +1,7 @@
-package contentManagementSystem.controller;
+package contentManagementSystem.controller.faq;
 
-import contentManagementSystem.model.request.UpdateFaqSchemaRequestBody;
-import contentManagementSystem.model.request.UpdateFaqSchemaRequest;
+import contentManagementSystem.model.request.updateRequest.UpdateFaqSchemaRequestBody;
+import contentManagementSystem.model.request.updateRequest.UpdateFaqSchemaRequest;
 import contentManagementSystem.model.response.UpdateSchemaResponse;
 import contentManagementSystem.enums.SchemaEnum;
 import contentManagementSystem.service.UpdateSchemaService;

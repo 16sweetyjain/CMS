@@ -1,5 +1,7 @@
 package contentManagementSystem.enums;
 
+import contentManagementSystem.constants.SchemaConstants;
+
 public enum SchemaEnum {
 
         FAQSCHEMA(SchemaConstants.FAQ),

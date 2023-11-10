@@ -1,9 +1,7 @@
-package contentManagementSystem.controller;
+package contentManagementSystem.controller.helpX;
 
-import contentManagementSystem.model.Image;
-import contentManagementSystem.model.request.UpdateHelpXSchemaRequest;
-import contentManagementSystem.model.request.UpdateHelpXSchemaRequestBody;
-import contentManagementSystem.model.request.UpdateFaqSchemaRequest;
+import contentManagementSystem.model.request.updateRequest.UpdateHelpXSchemaRequest;
+import contentManagementSystem.model.request.updateRequest.UpdateHelpXSchemaRequestBody;
 import contentManagementSystem.model.response.UpdateSchemaResponse;
 import contentManagementSystem.enums.SchemaEnum;
 import contentManagementSystem.service.UpdateSchemaService;

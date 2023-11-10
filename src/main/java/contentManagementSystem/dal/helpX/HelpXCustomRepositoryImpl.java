@@ -1,6 +1,6 @@
-package contentManagementSystem.dal;
+package contentManagementSystem.dal.helpX;
 
-import contentManagementSystem.model.Faq;
+import contentManagementSystem.dal.helpX.HelpXCustomRepository;
 import contentManagementSystem.model.HelpX;
 import contentManagementSystem.model.Image;
 import org.springframework.beans.factory.annotation.Autowired;

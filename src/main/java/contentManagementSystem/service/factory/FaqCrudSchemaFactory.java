@@ -1,12 +1,12 @@
 package contentManagementSystem.service.factory;
 
 
-import contentManagementSystem.dal.FaqCustomRepositoryImpl;
+import contentManagementSystem.dal.faq.FaqCustomRepositoryImpl;
 import contentManagementSystem.model.Faq;
 import contentManagementSystem.model.request.BaseRequest;
-import contentManagementSystem.model.request.CreateFaqSchemaRequest;
-import contentManagementSystem.model.request.GetSchemaRequest;
-import contentManagementSystem.model.request.UpdateFaqSchemaRequest;
+import contentManagementSystem.model.request.createRequest.CreateFaqSchemaRequest;
+import contentManagementSystem.model.request.getRequest.GetSchemaRequest;
+import contentManagementSystem.model.request.updateRequest.UpdateFaqSchemaRequest;
 import contentManagementSystem.model.response.*;
 import contentManagementSystem.enums.SchemaEnum;
 import org.springframework.beans.factory.annotation.Autowired;

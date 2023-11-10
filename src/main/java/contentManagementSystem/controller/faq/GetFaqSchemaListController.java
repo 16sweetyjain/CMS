@@ -1,12 +1,10 @@
-package contentManagementSystem.controller;
+package contentManagementSystem.controller.faq;
 
-import contentManagementSystem.model.request.GetAllSchemaRequest;
+import contentManagementSystem.model.request.getRequest.GetAllSchemaRequest;
 import contentManagementSystem.model.response.GetAllSchemaResponse;
 import contentManagementSystem.model.response.GetSchemaResponse;
 import contentManagementSystem.enums.SchemaEnum;
 import contentManagementSystem.service.GetSchemaListService;
-import contentManagementSystem.service.factory.CrudSchemaInterface;
-import contentManagementSystem.service.factory.GetSchemaFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

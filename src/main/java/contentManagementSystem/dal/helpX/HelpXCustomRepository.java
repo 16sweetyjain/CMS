@@ -1,4 +1,4 @@
-package contentManagementSystem.dal;
+package contentManagementSystem.dal.helpX;
 
 import contentManagementSystem.model.Faq;
 import contentManagementSystem.model.HelpX;

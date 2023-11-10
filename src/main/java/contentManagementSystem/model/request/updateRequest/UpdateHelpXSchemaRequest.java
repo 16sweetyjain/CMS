@@ -1,9 +1,10 @@
-package contentManagementSystem.model.request;
+package contentManagementSystem.model.request.updateRequest;
 
 import contentManagementSystem.enums.SchemaEnum;
 import contentManagementSystem.model.Image;
+import contentManagementSystem.model.request.BaseRequest;
 
-public class UpdateHelpXSchemaRequest extends BaseRequest{
+public class UpdateHelpXSchemaRequest extends BaseRequest {
     String schemaId;
     String title;
     String subTitle;

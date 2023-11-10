@@ -1,9 +1,10 @@
-package contentManagementSystem.model.request;
+package contentManagementSystem.model.request.updateRequest;
 
 import contentManagementSystem.enums.SchemaEnum;
 import contentManagementSystem.model.Faq;
+import contentManagementSystem.model.request.BaseRequest;
 
-public class UpdateFaqSchemaRequest extends BaseRequest{
+public class UpdateFaqSchemaRequest extends BaseRequest {
     String schemaId;
     String description;
     String title;

@@ -1,13 +1,13 @@
-package contentManagementSystem.model.request;
+package contentManagementSystem.model.request.createRequest;
 
-import contentManagementSystem.enums.SchemaEnum;
-
-public class CreateFaqSchemaRequest extends BaseRequest {
+public class CreateFaqSchemaRequestBody {
     String description;
     String title;
 
-    public CreateFaqSchemaRequest(String requestId, SchemaEnum schemaEnum, String description, String title) {
-        super(requestId, schemaEnum);
+    public CreateFaqSchemaRequestBody() {
+    }
+
+    public CreateFaqSchemaRequestBody(String description, String title) {
         this.description = description;
         this.title = title;
     }

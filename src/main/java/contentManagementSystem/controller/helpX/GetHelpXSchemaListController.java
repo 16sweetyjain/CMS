@@ -1,7 +1,7 @@
-package contentManagementSystem.controller;
+package contentManagementSystem.controller.helpX;
 
 import contentManagementSystem.enums.SchemaEnum;
-import contentManagementSystem.model.request.GetAllSchemaRequest;
+import contentManagementSystem.model.request.getRequest.GetAllSchemaRequest;
 import contentManagementSystem.model.response.GetAllSchemaResponse;
 import contentManagementSystem.model.response.GetSchemaResponse;
 import contentManagementSystem.service.GetSchemaListService;

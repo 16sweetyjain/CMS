@@ -1,9 +1,11 @@
 package contentManagementSystem.service.factory;
 
-import contentManagementSystem.dal.HelpXCustomRepositoryImpl;
+import contentManagementSystem.dal.helpX.HelpXCustomRepositoryImpl;
 import contentManagementSystem.model.HelpX;
-import contentManagementSystem.model.Image;
 import contentManagementSystem.model.request.*;
+import contentManagementSystem.model.request.createRequest.CreateHelpXSchemaRequest;
+import contentManagementSystem.model.request.getRequest.GetSchemaRequest;
+import contentManagementSystem.model.request.updateRequest.UpdateHelpXSchemaRequest;
 import contentManagementSystem.model.response.*;
 import contentManagementSystem.enums.SchemaEnum;
 import org.springframework.beans.factory.annotation.Autowired;
