@@ -1,9 +1,7 @@
 package contentManagementSystem.controller;
 
-import contentManagementSystem.model.request.CreateFaqSchemaRequestBody;
 import contentManagementSystem.model.request.UpdateFaqSchemaRequestBody;
-import contentManagementSystem.model.request.UpdateSchemaRequest;
-import contentManagementSystem.model.response.CreateSchemaResponse;
+import contentManagementSystem.model.request.UpdateFaqSchemaRequest;
 import contentManagementSystem.model.response.UpdateSchemaResponse;
 import contentManagementSystem.enums.SchemaEnum;
 import contentManagementSystem.service.UpdateSchemaService;
@@ -24,7 +22,7 @@ public class UpdateFaqSchemaController {
 
         ResponseEntity responseEntity = null;
 
-        UpdateSchemaRequest updateFaqSchemaRequest = new UpdateSchemaRequest(headers.get("x-request-id"), SchemaEnum.FAQSCHEMA, faqId, updateFaqSchemaRequestBody);
+        UpdateFaqSchemaRequest updateFaqSchemaRequest = new UpdateFaqSchemaRequest(headers.get("x-request-id"), SchemaEnum.FAQSCHEMA, faqId, updateFaqSchemaRequestBody.getTitle(), updateFaqSchemaRequestBody.getDescription());
 
         UpdateSchemaResponse updateSchemaResponse = new UpdateSchemaResponse();
 

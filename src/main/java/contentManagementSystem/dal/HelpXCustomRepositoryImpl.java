@@ -47,11 +47,11 @@ public class HelpXCustomRepositoryImpl implements HelpXCustomRepository {
 
         Image updatedImage = updatedHelpX.getImage();
 
-        if(requestedHelpX.getImage().getImageURL() != null && !requestedHelpX.getImage().getImageURL().isEmpty() )  {
+        if(requestedHelpX.getImage() != null && requestedHelpX.getImage().getImageURL() != null && !requestedHelpX.getImage().getImageURL().isEmpty() )  {
             updatedImage.setImageURL(requestedHelpX.getImage().getImageURL());
         }
 
-        if(requestedHelpX.getImage().getAltText() != null && !requestedHelpX.getImage().getAltText().isEmpty() )  {
+        if(requestedHelpX.getImage() != null  && requestedHelpX.getImage().getAltText() != null && !requestedHelpX.getImage().getAltText().isEmpty() )  {
             updatedImage.setAltText(requestedHelpX.getImage().getAltText());
         }
 

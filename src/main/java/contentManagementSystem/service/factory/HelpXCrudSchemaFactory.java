@@ -2,6 +2,7 @@ package contentManagementSystem.service.factory;
 
 import contentManagementSystem.dal.HelpXCustomRepositoryImpl;
 import contentManagementSystem.model.HelpX;
+import contentManagementSystem.model.Image;
 import contentManagementSystem.model.request.*;
 import contentManagementSystem.model.response.*;
 import contentManagementSystem.enums.SchemaEnum;
@@ -68,10 +69,11 @@ public class HelpXCrudSchemaFactory implements CrudSchemaInterface<BaseRequest, 
 
     @Override
     public BaseResponse updateSchema(BaseRequest baseRequest) {
-        UpdateSchemaRequest request = (UpdateSchemaRequest) baseRequest;
+        UpdateHelpXSchemaRequest request = (UpdateHelpXSchemaRequest) baseRequest;
         HelpX updatedHelpX = null;
         try{
-            HelpX helpX = (HelpX) request.getSchema();
+
+            HelpX helpX = new HelpX(request.getSchemaId(), request.getTitle(), request.getSubTitle(), request.getDescription(), request.getImage(), request.getParagraph());
             String helpXId = request.getSchemaId();
 
             updatedHelpX = helpXCustomRepository.updateHelpXArticle(helpX, helpXId);

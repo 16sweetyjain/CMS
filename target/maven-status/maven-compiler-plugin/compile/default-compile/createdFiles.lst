@@ -2,8 +2,10 @@ contentManagementSystem/model/Faq.class
 contentManagementSystem/model/response/CreateSchemaResponse.class
 contentManagementSystem/ContentManagementSystem.class
 contentManagementSystem/controller/UpdateHelpXSchemaController.class
+contentManagementSystem/model/request/UpdateHelpXSchemaRequest.class
 contentManagementSystem/model/request/CreateFaqSchemaRequestBody.class
 contentManagementSystem/dal/HelpXCustomRepository.class
+contentManagementSystem/model/request/UpdateFaqSchemaRequest.class
 contentManagementSystem/model/request/GetSchemaRequest.class
 contentManagementSystem/service/factory/HelpXCrudSchemaFactory.class
 contentManagementSystem/service/CreateSchemaService.class
@@ -27,7 +29,6 @@ contentManagementSystem/model/response/UpdateSchemaResponse.class
 contentManagementSystem/model/HelpX.class
 contentManagementSystem/service/GetSchemaListService.class
 contentManagementSystem/model/response/GetSchemaResponse.class
-contentManagementSystem/model/request/UpdateSchemaRequest.class
 contentManagementSystem/model/request/CreateHelpXSchemaRequest.class
 contentManagementSystem/model/request/CreateFaqSchemaRequest.class
 contentManagementSystem/controller/GetHelpXSchemaListController.class

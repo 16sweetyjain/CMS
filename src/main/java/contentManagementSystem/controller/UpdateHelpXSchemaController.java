@@ -1,9 +1,9 @@
 package contentManagementSystem.controller;
 
-import contentManagementSystem.model.request.CreateHelpXSchemeRequestBody;
+import contentManagementSystem.model.Image;
+import contentManagementSystem.model.request.UpdateHelpXSchemaRequest;
 import contentManagementSystem.model.request.UpdateHelpXSchemaRequestBody;
-import contentManagementSystem.model.request.UpdateSchemaRequest;
-import contentManagementSystem.model.response.CreateSchemaResponse;
+import contentManagementSystem.model.request.UpdateFaqSchemaRequest;
 import contentManagementSystem.model.response.UpdateSchemaResponse;
 import contentManagementSystem.enums.SchemaEnum;
 import contentManagementSystem.service.UpdateSchemaService;
@@ -24,7 +24,7 @@ public class UpdateHelpXSchemaController {
 
         ResponseEntity responseEntity = null;
 
-        UpdateSchemaRequest updateSchemaRequest = new UpdateSchemaRequest(headers.get("x-request-id"), SchemaEnum.HELPXSCHEMA, helpXId, updateHelpXSchemaRequestBody);
+        UpdateHelpXSchemaRequest updateSchemaRequest = new UpdateHelpXSchemaRequest(headers.get("x-request-id"), SchemaEnum.HELPXSCHEMA, helpXId, updateHelpXSchemaRequestBody.getTitle(), updateHelpXSchemaRequestBody.getSubTitle(), updateHelpXSchemaRequestBody.getDescription(), updateHelpXSchemaRequestBody.getImage(), updateHelpXSchemaRequestBody.getParagraph());
 
         UpdateSchemaResponse updateSchemaResponse = new UpdateSchemaResponse();
 

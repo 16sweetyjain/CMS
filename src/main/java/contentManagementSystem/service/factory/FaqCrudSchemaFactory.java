@@ -6,12 +6,11 @@ import contentManagementSystem.model.Faq;
 import contentManagementSystem.model.request.BaseRequest;
 import contentManagementSystem.model.request.CreateFaqSchemaRequest;
 import contentManagementSystem.model.request.GetSchemaRequest;
-import contentManagementSystem.model.request.UpdateSchemaRequest;
+import contentManagementSystem.model.request.UpdateFaqSchemaRequest;
 import contentManagementSystem.model.response.*;
 import contentManagementSystem.enums.SchemaEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,10 +73,11 @@ public class FaqCrudSchemaFactory implements CrudSchemaInterface<BaseRequest, Ba
 
     @Override
     public BaseResponse updateSchema(BaseRequest baseRequest) {
-        UpdateSchemaRequest request = (UpdateSchemaRequest) baseRequest;
+        UpdateFaqSchemaRequest request = (UpdateFaqSchemaRequest) baseRequest;
         Faq updatedFaq = null;
         try{
-            Faq faq = (Faq) request.getSchema();
+
+            Faq faq = new Faq(request.getSchemaId(), request.getTitle(), request.getDescription());
             String faqId = request.getSchemaId();
 
             updatedFaq = faqCustomRepository.updateFaq(faq, faqId);
