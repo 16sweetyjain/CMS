@@ -1,6 +1,8 @@
 package contentManagementSystem.service.factory;
 
 import contentManagementSystem.dal.helpX.HelpXCustomRepositoryImpl;
+import contentManagementSystem.exception.BadRequestException;
+import contentManagementSystem.exception.InternalServerError;
 import contentManagementSystem.model.HelpX;
 import contentManagementSystem.model.request.*;
 import contentManagementSystem.model.request.createRequest.CreateHelpXSchemaRequest;
@@ -9,6 +11,7 @@ import contentManagementSystem.model.request.updateRequest.UpdateHelpXSchemaRequ
 import contentManagementSystem.model.response.*;
 import contentManagementSystem.enums.SchemaEnum;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
 
@@ -29,16 +32,21 @@ public class HelpXCrudFactory implements CrudInterface<BaseRequest, BaseResponse
     }
 
     @Override
-    public BaseResponse getSchema(BaseRequest baseRequest) {
+    public BaseResponse getSchema(BaseRequest baseRequest) throws InternalServerError, BadRequestException {
 
         GetSchemaRequest request = (GetSchemaRequest) baseRequest;
+
+        if(request.getSchemaId() ==  null || request.getSchemaId().isEmpty()) {
+            throw new BadRequestException("HelpX id is missing", HttpStatus.BAD_REQUEST.value(), request.getRequestId());
+        }
 
         HelpX helpX  = null;
 
         try {
             helpX = helpXCustomRepository.getHelpXArticle(request.getSchemaId());
         }catch(Exception e) {
-            e.printStackTrace();
+            throw new InternalServerError("Error while getting helpX", HttpStatus.INTERNAL_SERVER_ERROR.value(), request.getRequestId());
+
         }
 
         GetSchemaResponse response = new GetSchemaResponse();
@@ -49,17 +57,22 @@ public class HelpXCrudFactory implements CrudInterface<BaseRequest, BaseResponse
     }
 
     @Override
-    public BaseResponse createSchema(BaseRequest baseRequest) {
+    public BaseResponse createSchema(BaseRequest baseRequest) throws InternalServerError, BadRequestException {
         String helpXId = UUID.randomUUID().toString();
         CreateHelpXSchemaRequest request = (CreateHelpXSchemaRequest) baseRequest;
 
-            HelpX helpX = new HelpX(helpXId, request.getTitle(), request.getSubTitle(), request.getDescription(), request.getImage(), request.getParagraph(), request.getUserId());
+        if(request.getTitle() ==  null || request.getTitle().isEmpty()) {
+            throw new BadRequestException("HelpX title is missing", HttpStatus.BAD_REQUEST.value(), request.getRequestId());
+        }
+
+        HelpX helpX = new HelpX(helpXId, request.getTitle(), request.getSubTitle(), request.getDescription(), request.getImage(), request.getParagraph(), request.getUserId());
 
         try{
             helpXCustomRepository.addHelpXArticle(helpX);
 
         }catch(Exception e) {
-            e.printStackTrace();
+            throw new InternalServerError("Error while adding helpX", HttpStatus.INTERNAL_SERVER_ERROR.value(), request.getRequestId());
+
         }
 
         CreateSchemaResponse response = new CreateSchemaResponse();
@@ -70,9 +83,13 @@ public class HelpXCrudFactory implements CrudInterface<BaseRequest, BaseResponse
     }
 
     @Override
-    public BaseResponse updateSchema(BaseRequest baseRequest) {
+    public BaseResponse updateSchema(BaseRequest baseRequest) throws InternalServerError, BadRequestException {
         UpdateHelpXSchemaRequest request = (UpdateHelpXSchemaRequest) baseRequest;
         HelpX updatedHelpX = null;
+
+        if(request.getSchemaId() ==  null || request.getSchemaId().isEmpty()) {
+            throw new BadRequestException("HelpX id is missing", HttpStatus.BAD_REQUEST.value(), request.getRequestId());
+        }
         try{
 
             HelpX helpX = new HelpX(request.getSchemaId(), request.getTitle(), request.getSubTitle(), request.getDescription(), request.getImage(), request.getParagraph(), request.getUserId());
@@ -81,7 +98,8 @@ public class HelpXCrudFactory implements CrudInterface<BaseRequest, BaseResponse
             updatedHelpX = helpXCustomRepository.updateHelpXArticle(helpX, helpXId);
 
         }catch(Exception e) {
-            e.printStackTrace();
+            throw new InternalServerError("Error while updating helpX", HttpStatus.INTERNAL_SERVER_ERROR.value(), request.getRequestId());
+
         }
 
         UpdateSchemaResponse response = new UpdateSchemaResponse();
@@ -93,12 +111,13 @@ public class HelpXCrudFactory implements CrudInterface<BaseRequest, BaseResponse
     }
 
     @Override
-    public BaseResponse getAllSchema(BaseRequest baseRequest) {
+    public BaseResponse getAllSchema(BaseRequest baseRequest) throws InternalServerError {
         List<HelpX> helpXList = new ArrayList<>();
         try {
             helpXList = helpXCustomRepository.getAllHelpXArticle();
         }catch (Exception e) {
-            e.printStackTrace();
+            throw new InternalServerError("Error while getting helpX list", HttpStatus.INTERNAL_SERVER_ERROR.value(), baseRequest.getRequestId());
+
         }
         GetAllSchemaResponse getAllSchemaResponse = new GetAllSchemaResponse();
         getAllSchemaResponse.setSchemaList(helpXList);

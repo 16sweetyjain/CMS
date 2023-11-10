@@ -1,5 +1,6 @@
 package contentManagementSystem.service;
 
+import contentManagementSystem.exception.InternalServerError;
 import contentManagementSystem.model.request.BaseRequest;
 import contentManagementSystem.model.request.BaseSchemaRequest;
 import contentManagementSystem.model.response.BaseResponse;
@@ -16,7 +17,7 @@ public class GetSchemaListService extends SchemaTemplate<BaseSchemaRequest, Base
     GetSchemaFactory getSchemaFactory;
 
     @Override
-    protected BaseResponse process(BaseSchemaRequest request, BaseResponse response) {
+    protected BaseResponse process(BaseSchemaRequest request, BaseResponse response) throws InternalServerError {
         CrudInterface crudSchemaInterface = getSchemaFactory.findStrategy(request.getSchemaEnum());
 
         GetAllSchemaResponse getAllSchemaResponse = (GetAllSchemaResponse) crudSchemaInterface.getAllSchema(request);

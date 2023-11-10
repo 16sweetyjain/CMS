@@ -1,5 +1,7 @@
 package contentManagementSystem.service;
 
+import contentManagementSystem.exception.BadRequestException;
+import contentManagementSystem.exception.InternalServerError;
 import contentManagementSystem.model.request.BaseRequest;
 import contentManagementSystem.model.request.BaseSchemaRequest;
 import contentManagementSystem.model.response.BaseResponse;
@@ -16,7 +18,7 @@ public class UpdateSchemaService extends SchemaTemplate<BaseSchemaRequest, BaseR
     GetSchemaFactory getSchemaFactory;
 
     @Override
-    protected BaseResponse process(BaseSchemaRequest request, BaseResponse response) {
+    protected BaseResponse process(BaseSchemaRequest request, BaseResponse response) throws InternalServerError, BadRequestException {
         CrudInterface crudSchemaInterface = getSchemaFactory.findStrategy(request.getSchemaEnum());
 
         UpdateSchemaResponse updateSchemaResponse = (UpdateSchemaResponse) crudSchemaInterface.updateSchema(request);
