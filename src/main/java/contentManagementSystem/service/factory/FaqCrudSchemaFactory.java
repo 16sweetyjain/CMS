@@ -35,15 +35,16 @@ public class FaqCrudSchemaFactory implements CrudSchemaInterface<BaseRequest, Ba
     public BaseResponse getSchema(BaseRequest baseRequest) {
         GetSchemaRequest request = (GetSchemaRequest) baseRequest;
 
-        Faq faq = null;
+        Faq faq = new Faq();
 
         try {
              faq = faqCustomRepository.getFaq(request.getSchemaId());
+
         }catch(Exception e) {
             e.printStackTrace();
         }
 
-        GetSchemaResponse response = new GetSchemaResponse<Faq>();
+        GetSchemaResponse response = new GetSchemaResponse();
 
         response.setSchema(faq);
 

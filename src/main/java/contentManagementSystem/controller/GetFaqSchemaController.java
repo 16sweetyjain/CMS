@@ -32,8 +32,6 @@ public class GetFaqSchemaController {
             e.printStackTrace();
         }
 
-        System.out.println(responseEntity.toString());
-
         return responseEntity;
     }
 }

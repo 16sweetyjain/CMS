@@ -4,7 +4,6 @@
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/ContentManagementSystem.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/service/UpdateSchemaService.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/controller/UpdateHelpXSchemaController.java
-/Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/model/Schema.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/model/request/GetSchemaRequest.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/service/factory/HelpXCrudSchemaFactory.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/model/request/BaseRequest.java
