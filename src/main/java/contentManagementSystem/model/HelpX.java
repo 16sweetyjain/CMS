@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class HelpX{
     @Id
     String id;
-    String schemaId;
+    String helpXId;
     String title;
     String subTitle;
     String description;
@@ -18,8 +18,8 @@ public class HelpX{
     public HelpX() {
     }
 
-    public HelpX(String schemaId, String title, String subTitle, String description, Image image, String paragraph, String userId) {
-        this.schemaId = schemaId;
+    public HelpX(String helpXId, String title, String subTitle, String description, Image image, String paragraph, String userId) {
+        this.helpXId = helpXId;
         this.title = title;
         this.subTitle = subTitle;
         this.description = description;
@@ -28,9 +28,9 @@ public class HelpX{
         this.userId = userId;
     }
 
-    public HelpX(String id, String schemaId, String title, String subTitle, String description, Image image, String paragraph, String userId) {
+    public HelpX(String id, String helpXId, String title, String subTitle, String description, Image image, String paragraph, String userId) {
         this.id = id;
-        this.schemaId = schemaId;
+        this.helpXId = helpXId;
         this.title = title;
         this.subTitle = subTitle;
         this.description = description;
@@ -48,7 +48,7 @@ public class HelpX{
     }
 
     public String getSchemaId() {
-        return schemaId;
+        return helpXId;
     }
 
     public String getUserId() {
@@ -59,8 +59,8 @@ public class HelpX{
         this.userId = userId;
     }
 
-    public void setSchemaId(String schemaId) {
-        this.schemaId = schemaId;
+    public void setSchemaId(String helpXId) {
+        this.helpXId = helpXId;
     }
 
     public String getTitle() {
@@ -111,7 +111,7 @@ public class HelpX{
                 ", description='" + description + '\'' +
                 ", image=" + image +
                 ", paragraph='" + paragraph + '\'' +
-                ", schemaId='" + schemaId + '\'' +
+                ", helpXId='" + helpXId + '\'' +
                 "} " + super.toString();
     }
 }

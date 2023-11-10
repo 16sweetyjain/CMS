@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Faq {
     @Id
     String id;
-    String schemaId;
+    String faqId;
     String title;
     String description;
     String userId;
@@ -17,16 +17,16 @@ public class Faq {
     public Faq() {
     }
 
-    public Faq(String schemaId, String title, String description, String userId) {
-        this.schemaId = schemaId;
+    public Faq(String faqId, String title, String description, String userId) {
+        this.faqId = faqId;
         this.title = title;
         this.description = description;
         this.userId = userId;
     }
 
-    public Faq(String id, String schemaId, String title, String description, String userId) {
+    public Faq(String id, String faqId, String title, String description, String userId) {
         this.id = id;
-        this.schemaId = schemaId;
+        this.faqId = faqId;
         this.title = title;
         this.description = description;
         this.userId = userId;
@@ -41,11 +41,11 @@ public class Faq {
     }
 
     public String getSchemaId() {
-        return schemaId;
+        return faqId;
     }
 
-    public void setSchemaId(String schemaId) {
-        this.schemaId = schemaId;
+    public void setSchemaId(String faqId) {
+        this.faqId = faqId;
     }
 
     public String getTitle() {
@@ -77,7 +77,7 @@ public class Faq {
         return "Faq{" +
                 "title='" + title + '\'' +
                 ", description='" + description + '\'' +
-                ", schemaId='" + schemaId + '\'' +
+                ", schemaId='" + faqId + '\'' +
                 "} " + super.toString();
     }
 }

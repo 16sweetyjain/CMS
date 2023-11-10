@@ -41,6 +41,7 @@ contentManagementSystem/model/request/getRequest/GetSchemaRequest.class
 contentManagementSystem/enums/SchemaEnum.class
 contentManagementSystem/model/response/GetAllSchemaResponse.class
 contentManagementSystem/controller/faq/GetFaqSchemaListController.class
+contentManagementSystem/exception/CustomExceptionController.class
 contentManagementSystem/controller/helpX/CreateHelpXSchemaController.class
 contentManagementSystem/service/factory/FaqCrudFactory.class
 contentManagementSystem/model/response/UpdateSchemaResponse.class

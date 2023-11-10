@@ -30,7 +30,7 @@ public class HelpXCustomRepositoryImpl implements HelpXCustomRepository {
 
     @Override
     public HelpX updateHelpXArticle(HelpX requestedHelpX, String helpXId) {
-        Query query = new Query(Criteria.where("schemaId").is(helpXId));
+        Query query = new Query(Criteria.where("helpXId").is(helpXId));
         HelpX updatedHelpX =  mongoTemplate.findOne(query, HelpX.class);
 
         if(requestedHelpX.getDescription() != null && !requestedHelpX.getDescription().isEmpty()) {
@@ -61,7 +61,7 @@ public class HelpXCustomRepositoryImpl implements HelpXCustomRepository {
     @Override
     public HelpX getHelpXArticle(String id) {
         Query query = new Query();
-        query.addCriteria(new Criteria("schemaId").is(id));
+        query.addCriteria(new Criteria("helpXId").is(id));
 
         return mongoTemplate.findOne(query, HelpX.class);
     }
