@@ -10,7 +10,6 @@ public class HelpX{
     String helpXId;
     String title;
     String subTitle;
-    String description;
     Image image;
     String paragraph;
     String userId;
@@ -22,7 +21,6 @@ public class HelpX{
         this.helpXId = helpXId;
         this.title = title;
         this.subTitle = subTitle;
-        this.description = description;
         this.image = image;
         this.paragraph = paragraph;
         this.userId = userId;
@@ -33,7 +31,6 @@ public class HelpX{
         this.helpXId = helpXId;
         this.title = title;
         this.subTitle = subTitle;
-        this.description = description;
         this.image = image;
         this.paragraph = paragraph;
         this.userId = userId;
@@ -79,14 +76,6 @@ public class HelpX{
         this.subTitle = subTitle;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public Image getImage() {
         return image;
     }
@@ -108,7 +97,6 @@ public class HelpX{
         return "HelpX{" +
                 "title='" + title + '\'' +
                 ", subTitle='" + subTitle + '\'' +
-                ", description='" + description + '\'' +
                 ", image=" + image +
                 ", paragraph='" + paragraph + '\'' +
                 ", helpXId='" + helpXId + '\'' +

@@ -19,17 +19,15 @@ public class FindUserController {
     @Autowired
     UserService userService;
 
-    @GetMapping(value = "/user/{userId}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<GetAllSchemaResponse> findUser(@PathVariable String userId, @RequestHeader Map<String, String> headers) {
+    @GetMapping(value = "/user/{email}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<GetAllSchemaResponse> findUser(@PathVariable String email, @RequestHeader Map<String, String> headers) {
 
         ResponseEntity responseEntity = null;
-
-        FindUserRequest findUserRequest = new FindUserRequest(headers.get("x-request-id"), userId);
 
         UserResponse findUserResponse = new UserResponse();
 
         try {
-            findUserResponse = userService.findUserByUserId(userId);
+            findUserResponse = userService.findUserByUserEmail(email);
             responseEntity = ResponseEntity.ok(findUserResponse);
         } catch (Exception e) {
             e.printStackTrace();
