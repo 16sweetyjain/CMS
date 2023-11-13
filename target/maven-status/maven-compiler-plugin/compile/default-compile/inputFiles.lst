@@ -7,6 +7,7 @@
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/model/request/BaseRequest.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/service/factory/CrudInterface.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/model/request/user/CreateUserRequest.java
+/Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/exception/NotAuthorizedError.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/model/request/updateRequest/UpdateHelpXSchemaRequestBody.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/model/HelpX.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/service/factory/HelpXCrudFactory.java
@@ -18,6 +19,7 @@
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/service/GetSchemaService.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/controller/helpX/GetHelpXSchemaController.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/service/SchemaTemplate.java
+/Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/exception/ResourceNotFoundError.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/controller/helpX/UpdateHelpXSchemaController.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/model/response/BaseResponse.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/controller/user/FindUserController.java
@@ -28,6 +30,7 @@
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/model/request/BaseSchemaRequest.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/model/request/createRequest/CreateHelpXSchemaRequest.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/model/request/createRequest/CreateHelpXSchemeRequestBody.java
+/Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/exception/BaseException.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/controller/user/CreateUserController.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/model/response/UpdateSchemaResponse.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/config/MongoConfig.java
@@ -38,18 +41,22 @@
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/constants/SchemaConstants.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/model/request/createRequest/CreateFaqSchemaRequest.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/model/request/updateRequest/UpdateFaqSchemaRequest.java
+/Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/exception/InternalServerError.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/model/request/updateRequest/UpdateFaqSchemaRequestBody.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/controller/faq/GetFaqSchemaController.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/model/request/createRequest/CreateFaqSchemaRequestBody.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/model/response/GetAllSchemaResponse.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/dal/helpX/HelpXCustomRepository.java
+/Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/model/response/ErrorResponse.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/model/response/CreateSchemaResponse.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/service/CreateSchemaService.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/service/factory/GetSchemaFactory.java
+/Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/exception/BadRequestException.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/dal/faq/FaqCustomRepository.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/model/Image.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/model/User.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/dal/user/UserCustomRepository.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/enums/SchemaEnum.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/service/factory/FaqCrudFactory.java
+/Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/exception/ExceptionController.java
 /Users/swejain/Documents/orc/Demo/src/main/java/contentManagementSystem/dal/faq/FaqCustomRepositoryImpl.java

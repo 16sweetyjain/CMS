@@ -33,10 +33,6 @@ public class HelpXCustomRepositoryImpl implements HelpXCustomRepository {
         Query query = new Query(Criteria.where("helpXId").is(helpXId));
         HelpX updatedHelpX =  mongoTemplate.findOne(query, HelpX.class);
 
-        if(requestedHelpX.getDescription() != null && !requestedHelpX.getDescription().isEmpty()) {
-            updatedHelpX.setDescription(requestedHelpX.getDescription());
-        }
-
         if(requestedHelpX.getTitle() != null && !requestedHelpX.getTitle().isEmpty()) {
             updatedHelpX.setTitle(requestedHelpX.getTitle());
         }
