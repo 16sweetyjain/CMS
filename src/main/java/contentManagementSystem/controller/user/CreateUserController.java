@@ -6,12 +6,10 @@ import contentManagementSystem.model.response.UserResponse;
 import contentManagementSystem.model.response.GetAllSchemaResponse;
 import contentManagementSystem.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 import java.util.UUID;
@@ -20,8 +18,9 @@ public class CreateUserController {
     @Autowired
     UserService userService;
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping(value = "/user", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<GetAllSchemaResponse> createUser(@RequestBody CreateUserRequestBody createUserRequestBody, @RequestHeader Map<String, String> headers) {
+    public ResponseEntity<GetAllSchemaResponse> createUser(@RequestBody CreateUserRequestBody createUserRequestBody, @RequestHeader Map<String, String> headers)  throws Exception  {
 
         ResponseEntity responseEntity = null;
 
@@ -29,12 +28,10 @@ public class CreateUserController {
 
         UserResponse createUserResponse = new UserResponse();
 
-        try {
+
             createUserResponse = userService.createUser(createUserRequest);
             responseEntity = ResponseEntity.ok(createUserResponse);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
 
         return responseEntity;
     }

@@ -17,8 +17,9 @@ public class UpdateFaqSchemaController {
     @Autowired
     UpdateSchemaService updateService;
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PutMapping(value = "/faq/{faqId}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<UpdateSchemaResponse> updateFaqSchema(@PathVariable String faqId, @RequestBody UpdateFaqSchemaRequestBody updateFaqSchemaRequestBody, @RequestHeader Map<String, String> headers) {
+    public ResponseEntity<UpdateSchemaResponse> updateFaqSchema(@PathVariable String faqId, @RequestBody UpdateFaqSchemaRequestBody updateFaqSchemaRequestBody, @RequestHeader Map<String, String> headers) throws Exception {
 
         ResponseEntity responseEntity = null;
 
@@ -27,12 +28,10 @@ public class UpdateFaqSchemaController {
         updateFaqSchemaRequest.setHeaders(headers);
         UpdateSchemaResponse updateSchemaResponse = new UpdateSchemaResponse();
 
-        try {
+
             updateSchemaResponse = (UpdateSchemaResponse) updateService.driver(updateFaqSchemaRequest, updateSchemaResponse);
             responseEntity = ResponseEntity.ok(updateSchemaResponse);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
 
         return responseEntity;
     }

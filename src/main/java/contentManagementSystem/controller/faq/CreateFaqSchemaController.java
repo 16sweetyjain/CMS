@@ -17,8 +17,9 @@ public class CreateFaqSchemaController {
     @Autowired
     CreateSchemaService createService;
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping(value = "/faq", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<CreateSchemaResponse> createFaqSchema(@RequestBody CreateFaqSchemaRequestBody createFaqSchemaRequestBody, @RequestHeader Map<String, String> headers) {
+    public ResponseEntity<CreateSchemaResponse> createFaqSchema(@RequestBody CreateFaqSchemaRequestBody createFaqSchemaRequestBody, @RequestHeader Map<String, String> headers) throws Exception {
 
         ResponseEntity responseEntity = null;
 
@@ -26,12 +27,9 @@ public class CreateFaqSchemaController {
         createFaqSchemaRequest.setHeaders(headers);
         CreateSchemaResponse createSchemaResponse = new CreateSchemaResponse();
 
-        try {
-            createSchemaResponse = (CreateSchemaResponse) createService.driver(createFaqSchemaRequest, createSchemaResponse);
-            responseEntity = ResponseEntity.ok(createSchemaResponse);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        createSchemaResponse = (CreateSchemaResponse) createService.driver(createFaqSchemaRequest, createSchemaResponse);
+        responseEntity = ResponseEntity.ok(createSchemaResponse);
+
 
         return responseEntity;
     }

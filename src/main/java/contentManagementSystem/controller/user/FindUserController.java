@@ -19,19 +19,17 @@ public class FindUserController {
     @Autowired
     UserService userService;
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping(value = "/user/{email}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<GetAllSchemaResponse> findUser(@PathVariable String email, @RequestHeader Map<String, String> headers) {
+    public ResponseEntity<GetAllSchemaResponse> findUser(@PathVariable String email, @RequestHeader Map<String, String> headers)  throws Exception  {
 
         ResponseEntity responseEntity = null;
 
         UserResponse findUserResponse = new UserResponse();
 
-        try {
+
             findUserResponse = userService.findUserByUserEmail(email);
             responseEntity = ResponseEntity.ok(findUserResponse);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
         return responseEntity;
     }

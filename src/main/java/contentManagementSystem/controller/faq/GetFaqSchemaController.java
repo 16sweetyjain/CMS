@@ -16,21 +16,19 @@ public class GetFaqSchemaController {
     @Autowired
     GetSchemaService getService;
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping(value = "/faq/{faqId}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<GetSchemaResponse> getFaqSchema(@PathVariable String faqId, @RequestHeader Map<String, String> headers) {
+    public ResponseEntity<GetSchemaResponse> getFaqSchema(@PathVariable String faqId, @RequestHeader Map<String, String> headers) throws Exception {
 
         ResponseEntity responseEntity = null;
 
         GetSchemaRequest getSchemaRequest = new GetSchemaRequest(headers.get("x-request-id"), headers.get("x-gw-auth-id"), SchemaEnum.FAQSCHEMA ,faqId);
         getSchemaRequest.setHeaders(headers);
         GetSchemaResponse getSchemaResponse = new GetSchemaResponse();
-        try {
+
             getSchemaResponse = (GetSchemaResponse) getService.driver(getSchemaRequest, getSchemaResponse);
 
             responseEntity = ResponseEntity.ok(getSchemaResponse);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
         return responseEntity;
     }

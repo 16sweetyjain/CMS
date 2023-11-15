@@ -8,6 +8,7 @@ import contentManagementSystem.service.GetSchemaListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,8 +23,9 @@ public class GetHelpXSchemaListController {
     @Autowired
     GetSchemaListService getSchemaListService;
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping(value = "/helpX", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<GetSchemaResponse> getHelpXSchemaList(@RequestHeader Map<String, String> headers) {
+    public ResponseEntity<GetSchemaResponse> getHelpXSchemaList(@RequestHeader Map<String, String> headers) throws Exception {
 
             ResponseEntity responseEntity = null;
 
@@ -31,12 +33,9 @@ public class GetHelpXSchemaListController {
 
             getAllSchemaRequest.setHeaders(headers);
             GetAllSchemaResponse getAllSchemaResponse = new GetAllSchemaResponse();
-            try {
+
                 getAllSchemaResponse = (GetAllSchemaResponse) getSchemaListService.driver(getAllSchemaRequest, getAllSchemaResponse);
                 responseEntity = ResponseEntity.ok(getAllSchemaResponse);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
 
             return responseEntity;
     }

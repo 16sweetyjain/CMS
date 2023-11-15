@@ -17,8 +17,9 @@ public class UpdateHelpXSchemaController {
     @Autowired
     UpdateSchemaService updateService;
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PutMapping(value = "/helpX/{helpXId}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<UpdateSchemaResponse> updateHelpXSchema(@PathVariable String helpXId, @RequestBody UpdateHelpXSchemaRequestBody updateHelpXSchemaRequestBody, @RequestHeader Map<String, String> headers) {
+    public ResponseEntity<UpdateSchemaResponse> updateHelpXSchema(@PathVariable String helpXId, @RequestBody UpdateHelpXSchemaRequestBody updateHelpXSchemaRequestBody, @RequestHeader Map<String, String> headers) throws Exception {
 
         ResponseEntity responseEntity = null;
 
@@ -27,12 +28,10 @@ public class UpdateHelpXSchemaController {
         updateSchemaRequest.setHeaders(headers);
         UpdateSchemaResponse updateSchemaResponse = new UpdateSchemaResponse();
 
-        try {
+
             updateSchemaResponse = (UpdateSchemaResponse) updateService.driver(updateSchemaRequest, updateSchemaResponse);
             responseEntity = ResponseEntity.ok(updateSchemaResponse);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
 
         return responseEntity;
     }
