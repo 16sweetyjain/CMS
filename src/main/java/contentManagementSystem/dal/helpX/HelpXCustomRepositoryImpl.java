@@ -37,6 +37,10 @@ public class HelpXCustomRepositoryImpl implements HelpXCustomRepository {
             updatedHelpX.setTitle(requestedHelpX.getTitle());
         }
 
+        if(requestedHelpX.getSubTitle() != null && !requestedHelpX.getSubTitle().isEmpty()) {
+            updatedHelpX.setSubTitle(requestedHelpX.getSubTitle());
+        }
+
         if(requestedHelpX.getParagraph() != null && !requestedHelpX.getParagraph().isEmpty()) {
             updatedHelpX.setParagraph(requestedHelpX.getParagraph());
         }
@@ -50,6 +54,7 @@ public class HelpXCustomRepositoryImpl implements HelpXCustomRepository {
         if(requestedHelpX.getImage() != null  && requestedHelpX.getImage().getAltText() != null && !requestedHelpX.getImage().getAltText().isEmpty() )  {
             updatedImage.setAltText(requestedHelpX.getImage().getAltText());
         }
+
 
         return updatedHelpX;
     }

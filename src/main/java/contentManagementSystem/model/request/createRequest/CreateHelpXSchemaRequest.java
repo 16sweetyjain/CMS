@@ -60,4 +60,15 @@ public class CreateHelpXSchemaRequest extends BaseSchemaRequest {
     public void setParagraph(String paragraph) {
         this.paragraph = paragraph;
     }
+
+    @Override
+    public String toString() {
+        return "CreateHelpXSchemaRequest{" +
+                "title='" + title + '\'' +
+                ", subTitle='" + subTitle + '\'' +
+                ", description='" + description + '\'' +
+                ", image=" + image +
+                ", paragraph='" + paragraph + '\'' +
+                "} " + super.toString();
+    }
 }
